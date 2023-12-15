@@ -1,0 +1,271 @@
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Golden Record from the Nostalgia Universe
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+
+<style>
+   body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        @layer components {
+            .menu-toggle {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin: 0.75rem 1rem;
+            }
+            .menu-toggle:checked ~ .menu {
+                display: block;
+            }
+            .menu {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 10;
+            }
+			.menu ul {
+				display: flex;
+                color: goldenrod;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+			}
+            .menu li {
+                margin: 0.5rem;
+            }
+            .menu li a {
+                display: block;
+                color: goldenrod;
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
+            .menu li a:hover {
+                color: darkgoldenrod;
+            }
+            .close-button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-top: 1.5rem;
+                margin-right: 40px;
+                color: goldenrod;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .overlay {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9;
+            }
+            .overlay:active {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+			.menu-toggle-icon {
+                display: block;
+                margin-right: 40px;
+            }
+            .nav {
+                display: none;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+			.menu-toggle-icon {
+                display: none;
+            }
+            .nav {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: 40px;
+            }
+            .nav ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+            }
+            .nav li {
+                margin: 0 0.5rem;
+            }
+            .nav li a {
+                display: block;
+                color: goldenrod;
+                text-decoration: none;
+            }
+            .nav li a:hover {
+                color: darkgoldenrod;
+            }
+        }
+	main {
+    border: solid 2px #000;
+	box-sizing: border-box;
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+	border-radius: 10px;
+  	}
+  </style>
+
+
+  <link rel="stylesheet" href="css/lightbox.min.css">
+ </head>
+
+ <body class="bg-white text-gray-700">
+
+  <header class="bg-black text-white py-3">
+   <div class="container mx-auto flex justify-between items-center">
+    
+    <nav class="flex">
+    <img alt="logo" class="w-auto h-12 ml-10"  src="logo.png">
+    </nav>
+    <input class="menu-toggle" id="menu-toggle" type="checkbox"/>
+     <label class="menu-toggle-icon text-2xl cursor-pointer" for="menu-toggle" style="color: goldenrod;">
+      <i class="fas fa-bars">
+      </i>
+     </label>
+
+    <nav class="menu">
+     <ul>
+      <li>
+       <a href="index.html">
+        Media
+       </a>
+      </li>
+      <li>
+       <a href="explanation.html">
+        Explanation
+       </a>
+      </li>
+      <li>
+       <a>
+        Top News
+       </a>
+      </li>
+      <li>
+       <a>
+        Astronomy
+       </a>
+      </li>
+      <li>
+       <a>
+        Technology
+       </a>
+      </li>
+     </ul>
+     <span class="close-button" onclick="document.getElementById('menu-toggle').checked = false;">
+      <i class="fas fa-times">
+      </i>
+     </span>
+    </nav>
+
+    <div class="overlay" onclick="document.getElementById('menu-toggle').checked = false;">
+    </div>
+
+    <nav class="nav h-12 ml-auto">
+     <ul>
+      <li>
+       <a href="index.html">
+        Media
+       </a>
+      </li>
+      <li>
+       <a href="explanation.html">
+        Explanation
+       </a>
+      </li>
+      <li>
+       <a>
+        Top News
+       </a>
+      </li>
+      <li>
+       <a>
+        Astronomy
+       </a>
+      </li>
+      <li>
+       <a>
+        Technology
+       </a>
+      </li>
+     </ul>
+    </nav>
+
+   </div>
+  </header>
+
+
+
+  <main class="container mx-auto my-8 px-6">
+   <article><h2 class="text-3xl font-bold text-center mb-14">
+     作品概要
+    </h2>
+    <p class="text-xl font-bold text-center mb-8">
+     説明
+    </p>
+    <p class="text-center mb-8">
+    このwebサイトは、卒業研究作品『経験を基盤としないノスタルジー世界』の一環として作成したものです。
+	<br>掲載されている画像やリンク付けされた映像、団体名や物語は架空であり、実在の人物・団体とは一切関係ありません。
+    </p>
+	
+    <p class="text-xl font-bold text-center mb-8">
+     作品の目的
+    </p>
+	<p class="text-center mb-8">
+	私たちは、自分たちがリアルタイムで体験したことのない平成や昭和という時代に、不思議な懐かしさを覚えることがある。それは本当のノスタルジーとは違い、自分たちの記憶を参照した物ではなく、あくまで「その時代を感じる」という感性によって惹き起こされるものだ。
+	<br>テレビや映画などで過去の映像や再現された作品を見ることはできるが、それだけではなく、記録に残らなかったり、目にしたこともなかったりするような小物やファッションにも、何となく「その時代らしさ」を感じることがある。「その時代らしさ」とは、その時代の流行や技術的な制約によって生まれた意匠や色彩など、それらの物品に細部にまで現れている要素によって構成されているのではないかと考えた。
+	<br>そこで私は、「その時代らしい要素」を研究し、それら要素を用いて閲覧者に「経験を基盤としないノスタルジー」を呼び起こす作品を制作することにした。
+    </p>
+	
+    <p class="text-xl font-bold text-center mb-8">
+     使用したツール
+    </p>
+    <p class="text-center mb-8">
+	 Blender
+	 <br><br>Adobe Photoshop
+	 <br>Adobe Illustrator
+	 <br>Adobe Premiere Pro
+	 <br>Adobe After Effects
+	 <br>Adobe Audition
+	 <br>Adobe Dreamweaver
+	 <br>Adobe Substance 3D Painter
+	 <br>Adobe Substance 3D Sampler
+	 <br><br>CHITUBOX
+	 <br><br>GitHub
+	 <br>Netlify
+    </p>
+   </article>
+  </main>
+  <footer class="bg-black text-center py-4" style="color: goldenrod;">
+   <p>
+    2023 TZU Media Design Reo Sato
+   </p>
+  </footer>
+ </body>
+</html>
